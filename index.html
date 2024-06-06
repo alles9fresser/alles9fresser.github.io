@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glitch Effect</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            flex-direction: column;
+        }
+        .glitch {
+            color: #00ff00; /* Matrix green color */
+            font-size: 2em;
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: #00ff00; /* Matrix green color */
+            background: black;
+            overflow: hidden;
+        }
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #00ff00;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch 2s infinite linear alternate-reverse;
+        }
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #00ff00;
+            clip: rect(90px, 450px, 10px, 0);
+            animation: glitch 2s infinite linear alternate-reverse;
+            animation-delay: .5s;
+        }
+        @keyframes glitch {
+            0% {
+                clip: rect(42px, 9999px, 44px, 0);
+                transform: skew(0.08deg);
+            }
+            5% {
+                clip: rect(24px, 9999px, 50px, 0);
+                transform: skew(0.25deg);
+            }
+            10% {
+                clip: rect(32px, 9999px, 33px, 0);
+                transform: skew(0.09deg);
+            }
+            15% {
+                clip: rect(36px, 9999px, 20px, 0);
+                transform: skew(0.12deg);
+            }
+            20% {
+                clip: rect(30px, 9999px, 10px, 0);
+                transform: skew(0.18deg);
+            }
+            25% {
+                clip: rect(60px, 9999px, 80px, 0);
+                transform: skew(0.26deg);
+            }
+            30% {
+                clip: rect(80px, 9999px, 15px, 0);
+                transform: skew(0.1deg);
+            }
+            35% {
+                clip: rect(32px, 9999px, 55px, 0);
+                transform: skew(0.12deg);
+            }
+            40% {
+                clip: rect(44px, 9999px, 32px, 0);
+                transform: skew(0.24deg);
+            }
+            45% {
+                clip: rect(56px, 9999px, 30px, 0);
+                transform: skew(0.2deg);
+            }
+            50% {
+                clip: rect(30px, 9999px, 60px, 0);
+                transform: skew(0.18deg);
+            }
+            55% {
+                clip: rect(80px, 9999px, 90px, 0);
+                transform: skew(0.16deg);
+            }
+            60% {
+                clip: rect(20px, 9999px, 36px, 0);
+                transform: skew(0.14deg);
+            }
+            65% {
+                clip: rect(60px, 9999px, 40px, 0);
+                transform: skew(0.22deg);
+            }
+            70% {
+                clip: rect(32px, 9999px, 70px, 0);
+                transform: skew(0.1deg);
+            }
+            75% {
+                clip: rect(40px, 9999px, 44px, 0);
+                transform: skew(0.14deg);
+            }
+            80% {
+                clip: rect(44px, 9999px, 32px, 0);
+                transform: skew(0.18deg);
+            }
+            85% {
+                clip: rect(60px, 9999px, 20px, 0);
+                transform: skew(0.22deg);
+            }
+            90% {
+                clip: rect(30px, 9999px, 10px, 0);
+                transform: skew(0.24deg);
+            }
+            95% {
+                clip: rect(44px, 9999px, 32px, 0);
+                transform: skew(0.26deg);
+            }
+            100% {
+                clip: rect(56px, 9999px, 20px, 0);
+                transform: skew(0.28deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a href="#" class="glitch" data-text="12 have joined aFFERO synthetic foods master plan...">12 have joined aFFERO synthetic foods master plan...</a>
+        <br>
+        <br>
+        <a href="#" class="glitch" data-text="Become one of us">Become one of us</a>
+    </div>
+</body>
+</html>
